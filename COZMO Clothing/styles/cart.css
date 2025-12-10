@@ -1,0 +1,194 @@
+#cart {
+  overflow-x: auto;
+}
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img {
+  width: 70px;
+}
+
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+#cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+#cart table tbody td {
+  font-size: 13px;
+}
+
+#cart-add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#coupon {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3 {
+  padding-bottom: 15px;
+}
+
+#coupon input {
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1;
+}
+
+#coupon button,
+#subtotal button {
+  background-color: #088178;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+#subtotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+}
+
+#subtotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subtotal table td {
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 499px) {
+  #cart-add {
+    flex-direction: column;
+  }
+  #coupon {
+    width: 100%;
+  }
+  #subtotal {
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+
+/* -----------------------------
+   CART PAGE ANIMATIONS (CSS Only)
+--------------------------------*/
+
+/* Fade-in animation for table rows */
+#cart table tbody tr {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rowFade 0.6s ease forwards;
+}
+
+#cart table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+#cart table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+#cart table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+#cart table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes rowFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Coupon & Subtotal Box Animation */
+#coupon, #subtotal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.7s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth hover animation on buttons */
+#coupon button,
+#subtotal button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#coupon button:hover,
+#subtotal button:hover {
+  background-color: #06665f;
+  transform: translateY(-3px);
+}
+
+/* Input focus animation */
+#coupon input,
+#cart table td:nth-child(5) input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#coupon input:focus,
+#cart table td:nth-child(5) input:focus {
+  border-color: #088178;
+  box-shadow: 0 0 8px rgba(8, 129, 120, 0.3);
+}
+
+/* Table hover highlight */
+#cart table tbody tr {
+  transition: background 0.3s ease;
+}
+
+#cart table tbody tr:hover {
+  background: rgba(8, 129, 120, 0.07);
+}
