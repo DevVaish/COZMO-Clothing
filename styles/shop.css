@@ -1,0 +1,125 @@
+#page-header {
+  background-image: url(../img/banner/b1.jpg);
+  height: 40vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-header h2,
+#page-header p {
+  color: #fff;
+}
+
+#page-header p {
+  color: #979494;
+}
+
+/* Pagination Section */
+
+#pagination {
+  text-align: center;
+}
+
+#pagination a {
+  text-decoration: none;
+  padding: 15px 20px;
+  background-color: #088178;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Page Header Animation */
+#page-header {
+  background-image: url(../img/banner/b1.jpg);
+  height: 40vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: headerFade 1.4s ease forwards;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Background subtle zoom */
+#page-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: bgZoom 8s ease-out forwards;
+  filter: brightness(0.7);
+}
+
+/* Text Animations */
+#page-header h2,
+#page-header p {
+  color: #fff;
+  opacity: 0;
+  animation: slideUp 1.2s ease forwards;
+}
+
+#page-header p {
+  color: #979494;
+  animation-delay: 0.4s;
+}
+
+/* Pagination Section */
+#pagination {
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1.3s ease forwards;
+}
+
+#pagination a {
+  text-decoration: none;
+  padding: 15px 20px;
+  background-color: #088178;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Animation */
+#pagination a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Keyframes */
+@keyframes headerFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bgZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
