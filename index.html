@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-   <script src="https://kit.fontawesome.com/a634afca89.js" crossorigin="anonymous"></script>
+    <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ecommerce Website</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="chatbot/style.css" />
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://kit.fontawesome.com/a634afca89.js" crossorigin="anonymous"></script>
+
+  <title>Ecommerce Website</title>
+</head>
   </head>
   <body>
     <section id="header">
@@ -185,6 +192,37 @@
     <script src="data/products.js"></script>
     <script type="module" src="js/index.js"></script>
 
+   <div id="chat-icon" onclick="openChat()">💬</div>
+
+<!-- CHATBOT -->
+<div id="chatbot">
+  <div class="chat-header">
+    <span>ShopEase Bot</span>
+    <button onclick="closeChat()">✖</button>
+  </div>
+
+  <div class="chat-body" id="chat-body">
+    <div class="bot">
+      👋 Hello! Welcome to <b>ShopEase</b>.<br>
+      I can help you with products, offers & order tracking.
+    </div>
+
+    <div class="quick-replies">
+      <button onclick="sendQuick('Products')">Products</button>
+      <button onclick="sendQuick('Offers')">Offers</button>
+      <button onclick="sendQuick('Track Order')">Track Order</button>
+      <button onclick="sendQuick('Return Policy')">Return Policy</button>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+ 
+  <script src="chatbot/script.js"></script>
   </body>
 </html>
 
